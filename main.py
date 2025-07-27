@@ -35,15 +35,9 @@ def get_today_text_and_photos():
             if row.get("Фото"):
                 media_urls.append(row["Фото"])
 
-    header = f"*Запорізька гімназія №110*
-Дата: {today}"
-    full_text = header + "
-
-" + "
-
-".join(lines)
+    header = f"""*Запорізька гімназія №110*
+Дата: {сьогодні}"""
     return full_text, media_urls
-
 
 async def post_to_telegram():
     text, media_urls = get_today_text_and_photos()
